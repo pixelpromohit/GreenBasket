@@ -12,7 +12,9 @@ const Home = () => {
       <Categories/>
       <Bestsellers/>
       <BottomBanner/>
-      <NewsLetter/>
+      <div id="newsletter">
+        <NewsLetter/>
+      </div>
     </div>
   )
 }
