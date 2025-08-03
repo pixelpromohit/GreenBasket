@@ -31,10 +31,10 @@ const Navbar = () => {
     }, [searchQuery])
 
   return (
-    <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all">
+    <nav className="flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 py-3 md:py-4 border-b border-gray-300 bg-white relative transition-all">
 
         <NavLink to='/' onClick={() => setOpen(false)}>
-            <img className="h-9" src={assets.logo} alt="logo" />
+            <img className="h-7 md:h-9" src={assets.logo} alt="logo" />
         </NavLink>
 
         {/* Desktop Menu */}
@@ -70,20 +70,20 @@ const Navbar = () => {
             )}
         </div>
 
-        <div className='flex items-center gap-6 sm:hidden'>
+        <div className='flex items-center gap-4 sm:hidden'>
             <div onClick={()=> navigate("/cart")} className="relative cursor-pointer">
-                <img src={assets.nav_cart_icon} alt='cart' className='w-6 opacity-80'/>
-                <button className="absolute -top-2 -right-3 text-xs text-white bg-primary w-[18px] h-[18px] rounded-full">{getCartCount()}</button>
+                <img src={assets.nav_cart_icon} alt='cart' className='w-5 md:w-6 opacity-80'/>
+                <button className="absolute -top-2 -right-3 text-xs text-white bg-primary w-[16px] h-[16px] md:w-[18px] md:h-[18px] rounded-full flex items-center justify-center">{getCartCount()}</button>
             </div>
 
             <button onClick={() => open ? setOpen(false) : setOpen(true)} aria-label="Menu" className="">
-                <img src={assets.menu_icon} alt="menu" />            
+                <img src={assets.menu_icon} alt="menu" className="w-5 md:w-6" />            
             </button>
         </div>
 
 
         { open && (
-            <div className={`${open ? 'flex' : 'hidden'} absolute top-[60px] left-0 w-full bg-white shadow-md py-4 flex-col items-start gap-2 px-5 text-sm md:hidden`}>
+            <div className={`${open ? 'flex' : 'hidden'} absolute top-[60px] left-0 w-full bg-white shadow-md py-4 flex-col items-start gap-2 px-5 text-sm md:hidden z-50`}>
             <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
             <NavLink to="/products" onClick={() => setOpen(false)}>All Products</NavLink>
             {user && 
