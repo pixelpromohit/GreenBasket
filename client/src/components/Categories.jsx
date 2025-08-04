@@ -20,8 +20,9 @@ function Categories() {
                         scrollTo(0, 0)
                     }}
                 >
-                    <img src={category.image} alt={category.text} className='w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 object-contain group-hover:scale-110 transition-transform duration-300' />
-                    <p className='text-xs md:text-sm font-medium text-gray-700 text-center leading-tight'>{category.text}</p>
+                    <img src={category.image} alt={category.text} className='w-20 h-20 md:w-16 md:h-16 lg:w-24 lg:h-24 object-contain group-hover:scale-110 transition-transform duration-300' />
+                    <p className='text-sm md:text-base font-medium text-gray-700 text-center leading-tight'>
+              {category.text}</p>
                 </div>
             ))}
 
